@@ -11,6 +11,17 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import '../styles/navbar.css'
 import {Intro} from './Introduction'
 
+const styles = {
+  root: {
+    margin: '10px'
+  },
+  button: {
+    fontSize: '30px',
+    color: 'white',
+    fontWeight: '1000',
+  }
+}
+
 
 class Navbar extends React.Component{
   constructor(props){
@@ -19,25 +30,19 @@ class Navbar extends React.Component{
   
   render(){
     return (
-      <AppBar position="static" id='appbar' color='white'>
-        <Toolbar disableGutters>
-          <Grid container>
-            <Grid item lg={2} md={2} sm={12} xs={12}>
-              <Avatar alt='Alina Anam' src='./alina_dp_sm.jpg' id='avatar' style={{width: '200px', height: '20px'}} />
-            </Grid>
-            <Grid item lg={4} md={4} sm={4} xs={4}>
-              <Grid container>
-                <Grid item lg={12} md={12} sm={12} xs={12}>
-                  <Intro name="Alina Anam" spec="Web App Developer"/>
-                </Grid>
-              </Grid>
-            </Grid>
-            <Grid item lg={4} md={4} sm={4} xs={4}>
-              
-            </Grid>
-          </Grid>
-        </Toolbar>
-      </AppBar>
+      <Grid container style={styles.root}>
+        <Grid item lg={3} md={4} sm={5} xs={6}>
+          <Button style={styles.button}> 
+            Portia
+          </Button>
+        </Grid>
+        <Grid item lg={6} md={4} sm={2} xs={0}> </Grid>
+        <Grid item lg={3} md={4} sm={5} xs={6}>
+          <Button style={styles.button}>
+            Contact Me
+          </Button>
+        </Grid>
+      </Grid>
     )
   }
 }

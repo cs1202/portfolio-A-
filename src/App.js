@@ -27,19 +27,6 @@ const theme = createMuiTheme({
       500: '#ffffff'
     }
   },
-  overrides:{
-    MuiButton: {
-      root: {
-        background: 'linear-gradient(45deg, #fe6b8b 30%, #ff8e53 90%)',
-        borderRadius: 2,
-        border: 0,
-        height: 40,
-        color: 'white',
-        padding: '0 20px',
-        boxShadow: '0 3px 5px 2px rgba(25, 105, 135, .99)',
-      }
-    }
-  }
 })
 
 class App extends React.Component {
@@ -48,9 +35,6 @@ class App extends React.Component {
       <MuiThemeProvider theme={theme}>
         <Router>
           <div>
-            <Paper>
-              <Navbar />
-            </Paper>
             <Switch>
               <Route exact path="/" component={Home} />
             </Switch>
