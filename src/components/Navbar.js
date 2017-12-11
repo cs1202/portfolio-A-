@@ -13,7 +13,7 @@ import {Intro} from './Introduction'
 
 const styles = {
   root: {
-    margin: '10px'
+    marginTop: '10px'
   },
   button: {
     fontSize: '30px',

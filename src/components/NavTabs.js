@@ -20,22 +20,24 @@ class NavTabs extends React.Component{
         <Grid item lg={1} md={1} sm={1} xs={0}> </Grid>
         <Grid item lg={6} md={8} sm={9} xs={12}>
           <List >
-            <ListItem button>
-              <ListItemText disableTypography primary='About Me' style={styles.listItem} />
+            <ListItem button onClick={()=>this.props.changeMainComponent('aboutMe')}>
+              <ListItemText 
+                disableTypography primary='About Me' style={styles.listItem} 
+              />
             </ListItem>
-            <ListItem button>
+            <ListItem button onClick={()=>this.props.changeMainComponent('skills')}>
               <ListItemText disableTypography primary='Skills' style={styles.listItem}/>
             </ListItem>
-            <ListItem button>
+            <ListItem button onClick={()=>this.props.changeMainComponent('projects')}>
               <ListItemText disableTypography primary='Projects' style={styles.listItem} />
             </ListItem>
-            <ListItem button>
+            <ListItem button onClick={()=>this.props.changeMainComponent('github')}>
               <ListItemText disableTypography primary='Github' style={styles.listItem} />
             </ListItem>
-            <ListItem button>
+            <ListItem button onClick={()=>this.props.changeMainComponent('education')}>
               <ListItemText disableTypography primary='Education' style={styles.listItem} />
             </ListItem>
-            <ListItem button>
+            <ListItem button onClick={()=>this.props.changeMainComponent('testimonials')}>
               <ListItemText disableTypography primary='Testimonials' style={styles.listItem} />
             </ListItem>
           </List>
@@ -46,6 +48,7 @@ class NavTabs extends React.Component{
   }
 }
 
+
 const mapStateToProps = (state) => {
   return {
   }
@@ -53,6 +56,10 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
+    changeMainComponent: (value) => dispatch({
+      type: 'CHANGE_MAIN_COMPONENT',
+      value: value
+    })
   }
 }
 
