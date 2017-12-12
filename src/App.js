@@ -18,10 +18,6 @@ const theme = createMuiTheme({
       ...purple,
       500: '#37a000'
     },
-    secondary: {
-      ...green,
-      A400: '#00e677'
-    },
     error: red,
     white: {
       500: '#ffffff'

@@ -4,6 +4,7 @@ import {
   Paper, Grid
 } from 'material-ui'
 import {AboutMe} from './AboutMe'
+import {Skills} from './Skills'
 import NavTabs from './NavTabs'
 import Navbar from './Navbar'
 import {SocialIcon} from 'react-social-icons'
@@ -11,8 +12,8 @@ import '../styles/home.css'
 
 class Home extends React.Component{
   getMainComponent(){
-    if(this.props.mainComponent === 'aboutMe'){
-      return <AboutMe />
+    if(this.props.mainComponent === 'skills'){
+      return <Skills />
     }else{
       return <AboutMe />
     }

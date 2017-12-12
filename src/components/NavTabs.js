@@ -3,43 +3,42 @@ import { connect } from 'react-redux'
 import Tabs, {Tab} from 'material-ui/Tabs'
 import List, {ListItem, ListItemText} from 'material-ui/List'
 import {Grid} from 'material-ui'
+import '../styles/navtabs.css'
 const styles = {
   listItem: {
-    color: 'white',
+    color: 'blue',
     fontSize: '24px',
-    fontWeight: '800',
+    fontWeight: '700',
     marginTop: '8px',
     marginBottom: '8px',
+    fontFamily: 'Monaco',
   }
 }
 
 class NavTabs extends React.Component{
   render(){
+    const navTabsList = [
+      {component: 'aboutMe', itemText: 'AboutMe'},
+      {component: 'skills', itemText: 'Skills'},
+      {component: 'projects', itemText: 'Projects'},
+      {component: 'github', itemText: 'Github'},
+      {component: 'education', itemText: 'Education'},
+      {component: 'testimonials', itemText: 'Testimonials'},
+    ]
     return(
       <Grid container>
         <Grid item lg={1} md={1} sm={1} xs={0}> </Grid>
         <Grid item lg={6} md={8} sm={9} xs={12}>
           <List >
-            <ListItem button onClick={()=>this.props.changeMainComponent('aboutMe')}>
-              <ListItemText 
-                disableTypography primary='About Me' style={styles.listItem} 
-              />
-            </ListItem>
-            <ListItem button onClick={()=>this.props.changeMainComponent('skills')}>
-              <ListItemText disableTypography primary='Skills' style={styles.listItem}/>
-            </ListItem>
-            <ListItem button onClick={()=>this.props.changeMainComponent('projects')}>
-              <ListItemText disableTypography primary='Projects' style={styles.listItem} />
-            </ListItem>
-            <ListItem button onClick={()=>this.props.changeMainComponent('github')}>
-              <ListItemText disableTypography primary='Github' style={styles.listItem} />
-            </ListItem>
-            <ListItem button onClick={()=>this.props.changeMainComponent('education')}>
-              <ListItemText disableTypography primary='Education' style={styles.listItem} />
-            </ListItem>
-            <ListItem button onClick={()=>this.props.changeMainComponent('testimonials')}>
-              <ListItemText disableTypography primary='Testimonials' style={styles.listItem} />
-            </ListItem>
+            { navTabsList.map(item => (
+              <ListItem button
+                className='list-item'
+                onClick={()=>this.props.changeMainComponent(item.component)}>
+                <ListItemText disableTypography 
+                  className='list-item-text'
+                  primary={item.itemText} />
+              </ListItem>
+            ))}
           </List>
         </Grid>
         <Grid item lg={5} md={3} sm={2} xs={0}> </Grid>
