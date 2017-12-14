@@ -5,11 +5,9 @@ import {
   Switch,
 } from 'react-router-dom';
 
-import {Paper} from 'material-ui'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import { createMuiTheme } from 'material-ui/styles'
-import { purple, green, red } from 'material-ui/colors'
-import Navbar from './components/Navbar'
+import { purple, red } from 'material-ui/colors'
 import Home from './components/Home'
 
 const theme = createMuiTheme({

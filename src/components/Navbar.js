@@ -1,15 +1,11 @@
 import React from 'react'
-import {Link} from 'react-router-dom'
 import { connect } from 'react-redux'
 
 import {
-  AppBar, Toolbar, Avatar, Button,
+  Button,
   Grid
 } from 'material-ui'
-import Menu, { MenuItem } from 'material-ui/Menu'
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import '../styles/navbar.css'
-import {Intro} from './Introduction'
 
 const styles = {
   root: {
@@ -24,10 +20,6 @@ const styles = {
 
 
 class Navbar extends React.Component{
-  constructor(props){
-    super(props)
-  }
-  
   render(){
     return (
       <Grid container style={styles.root}>

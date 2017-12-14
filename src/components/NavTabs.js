@@ -1,20 +1,8 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import Tabs, {Tab} from 'material-ui/Tabs'
 import List, {ListItem, ListItemText} from 'material-ui/List'
 import {Grid} from 'material-ui'
 import '../styles/navtabs.css'
-const styles = {
-  listItem: {
-    color: 'blue',
-    fontSize: '24px',
-    fontWeight: '700',
-    marginTop: '8px',
-    marginBottom: '8px',
-    fontFamily: 'Monaco',
-  }
-}
-
 class NavTabs extends React.Component{
   render(){
     const navTabsList = [

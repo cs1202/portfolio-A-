@@ -1,22 +1,24 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import {
-  Paper, Grid
+   Grid
 } from 'material-ui'
 import {AboutMe} from './AboutMe'
 import {Skills} from './Skills'
+import {Projects} from './Projects'
 import NavTabs from './NavTabs'
 import Navbar from './Navbar'
 import {SocialIcon} from 'react-social-icons'
 import '../styles/home.css'
 
 class Home extends React.Component{
+
   getMainComponent(){
-    if(this.props.mainComponent === 'skills'){
+    if(this.props.mainComponent === 'skills')
       return <Skills />
-    }else{
-      return <AboutMe />
-    }
+    if(this.props.mainComponent === 'projects')
+      return <Projects />
+    return <AboutMe />
   }
   render(){
     return(

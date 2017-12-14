@@ -5,16 +5,8 @@ import {
 } from 'material-ui'
 import {LinearProgress} from 'material-ui/Progress'
 import '../styles/skills.css'
+import {skillsList} from '../data/skills.js'
 
-const skillsList = [
-  {name: 'Firebase & Ajax', proficiency: 85},
-  {name: 'Javascript & jQuery', proficiency: 92},
-  {name: 'HTML5 & CSS3', proficiency: 85},
-  {name: 'Responsive Bootstrap', proficiency: 90},
-  {name: 'C++', proficiency: 60},
-  {name: 'Rust', proficiency: 40}
-
-]
 
 export const Skills = (props) => (
   <Grid container>
