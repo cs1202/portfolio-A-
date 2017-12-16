@@ -1,7 +1,7 @@
 import React from 'react'
 
 import {
-  Grid, Typography
+  Grid, Typography, Paper
 } from 'material-ui'
 import {LinearProgress} from 'material-ui/Progress'
 import '../styles/skills.css'
@@ -9,30 +9,34 @@ import {skillsList} from '../data/skills.js'
 
 
 export const Skills = (props) => (
-  <Grid container>
-    <Grid item lg={12} md={12} sm={12} xs={12}>
-      <Typography component='h1' type='headline' id='title'>
-        Skills
-      </Typography>
-    </Grid>
-    <Grid item lg={12} md={12} sm={12} xs={12}>
-      <Typography className='narration' component='p' type='body'>
-        The web design and development industry is a growing professional that is attractive for a number of reasons. With so many companies and organizations depending on their online presence these days, the people who design, develop, and manage their websites are in high demand - a trend that is unlikely to change anytime soon.
-      </Typography>
-      <hr/>
-      <Typography className='narration' component='p' type='body'>
-        Whether you are just starting out as a web designer or web developer or are looking to change careers and become a web professional. The following list of skills, both technical and otherwise, represent some of these key areas of knowledge that I had worked on and added in my repositeries as I began down the path to become a website designer.
-      </Typography>
-    </Grid>
-    <Grid item lg={12} md={12} sm={12} xs={12}>
-      {skillsList.map(skill => (
-        <Skill name={skill.name} proficiency={skill.proficiency} />
-      ))}
-    </Grid>
+  <div>
+    <Paper style={{padding: '0px 10px 15px 10px' }}>
+      <Grid container>
+        <Grid item lg={12} md={12} sm={12} xs={12}>
+          <Typography component='h1' type='headline' id='title'>
+            Skills
+          </Typography>
+        </Grid>
+        <Grid item lg={12} md={12} sm={12} xs={12}>
+          <Typography className='narration' component='p' type='body'>
+            The web design and development industry is a growing professional that is attractive for a number of reasons. With so many companies and organizations depending on their online presence these days, the people who design, develop, and manage their websites are in high demand - a trend that is unlikely to change anytime soon.
+          </Typography>
+          <hr/>
+          <Typography className='narration' component='p' type='body'>
+            Whether you are just starting out as a web designer or web developer or are looking to change careers and become a web professional. The following list of skills, both technical and otherwise, represent some of these key areas of knowledge that I had worked on and added in my repositeries as I began down the path to become a website designer.
+          </Typography>
+        </Grid>
+        <Grid item lg={12} md={12} sm={12} xs={12}>
+          {skillsList.map(skill => (
+            <Skill name={skill.name} proficiency={skill.proficiency} />
+          ))}
+        </Grid>
+      </Grid>
+    </Paper>
     <Grid item lg={12} md={12} sm={12} xs={12} style={{marginBottom:'50px'}}>
       <hr/>
     </Grid>
-  </Grid>
+  </div>
 )
 
 class Skill extends React.Component{

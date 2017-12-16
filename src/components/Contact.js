@@ -2,53 +2,54 @@ import React from 'react'
 import { connect } from 'react-redux'
 
 import {
-  Grid, TextField, Button
+  Grid, TextField, Button, Paper
 } from 'material-ui'
 import '../styles/contact.css'
 
 class Contact extends React.Component{
   render(){
     return(
-      <Grid container>
-        <Grid item xs={12} style={{
-          border: 'dashed 2px black',
-          padding: '0px 30px 40px 30px',
-        }}>
-          <Grid container >
-            <Grid item xs={12} >
-              <TextField fullWidth className='align-left'
-                value={this.props.name} label='name'
-                onChange={this.props.changeName}
-              />
+      <Paper>
+        <Grid container>
+          <Grid item xs={12} style={{
+            padding: '10px 30px 40px 30px',
+          }}>
+            <Grid container >
+              <Grid item xs={12} >
+                <TextField fullWidth className='align-left'
+                  value={this.props.name} label='name'
+                  onChange={this.props.changeName}
+                />
+              </Grid>
+              <Grid item xs={12}>
+                <TextField fullWidth className='align-left'
+                  value={this.props.email} label='email'
+                  onChange={this.props.changeEmail}
+                />
+              </Grid>
+              <Grid item xs={12}>
+                <TextField fullWidth className='align-left'
+                  value={this.props.phone} label='phone'
+                  onChange={this.props.changePhone}
+                />
+              </Grid>
+              <Grid item xs={12}>
+                <TextField fullWidth multiline rows={3}
+                  className='align-left'
+                  value={this.props.message} label='message'
+                  onChange={this.props.changeMessage}
+                />
+              </Grid>
+              <Grid item xs={12}>
+                <Button color='primary' raised onClick={this.props.submitContactForm}>
+                  Contact Me
+                </Button>
+              </Grid>
             </Grid>
-            <Grid item xs={12}>
-              <TextField fullWidth className='align-left'
-                value={this.props.email} label='email'
-                onChange={this.props.changeEmail}
-              />
-            </Grid>
-            <Grid item xs={12}>
-              <TextField fullWidth className='align-left'
-                value={this.props.phone} label='phone'
-                onChange={this.props.changePhone}
-              />
-            </Grid>
-            <Grid item xs={12}>
-              <TextField fullWidth multiline rows={3}
-                className='align-left'
-                value={this.props.message} label='message'
-                onChange={this.props.changeMessage}
-              />
-            </Grid>
-            <Grid item xs={12}>
-              <Button color='primary' raised onClick={this.props.submitContactForm}>
-                Contact Me
-              </Button>
-            </Grid>
+            
           </Grid>
-          
         </Grid>
-      </Grid>
+      </Paper>
     )
   }
 }
