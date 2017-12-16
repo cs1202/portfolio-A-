@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 import {
   Grid, TextField, Button
 } from 'material-ui'
+import '../styles/contact.css'
 
 class Contact extends React.Component{
   render(){
@@ -12,29 +13,29 @@ class Contact extends React.Component{
         <Grid item xs={12} style={{
           border: 'dashed 2px black',
           padding: '0px 30px 40px 30px',
-          textAlign: 'center',
         }}>
           <Grid container >
-            <Grid item xs={12}>
-              <TextField fullWidth
+            <Grid item xs={12} >
+              <TextField fullWidth className='align-left'
                 value={this.props.name} label='name'
                 onChange={this.props.changeName}
               />
             </Grid>
             <Grid item xs={12}>
-              <TextField fullWidth
+              <TextField fullWidth className='align-left'
                 value={this.props.email} label='email'
                 onChange={this.props.changeEmail}
               />
             </Grid>
             <Grid item xs={12}>
-              <TextField fullWidth
+              <TextField fullWidth className='align-left'
                 value={this.props.phone} label='phone'
                 onChange={this.props.changePhone}
               />
             </Grid>
             <Grid item xs={12}>
-              <TextField fullWidth
+              <TextField fullWidth multiline rows={3}
+                className='align-left'
                 value={this.props.message} label='message'
                 onChange={this.props.changeMessage}
               />

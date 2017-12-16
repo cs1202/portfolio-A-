@@ -33,10 +33,10 @@ class Home extends React.Component{
   render(){
     return(
         <Grid container>
-          <Grid item xs={12} >
+          <Grid item xs={12} style={{margin: '0px', padding: '0px'}}>
             <Navbar />
           </Grid>
-          <Grid item lg={12} md={12} sm={12} xs={12}>
+          <Grid item xs={12} style={{margin: '0px'}}>
             <hr/>
           </Grid>
           <Grid item lg={3} md={3} sm={4} xs={5} >

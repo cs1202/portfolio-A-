@@ -10,8 +10,8 @@ import '../styles/navbar.css'
 const styles = {
   root: {
     marginTop: '10px',
-    paddingLeft: '50px',
-
+    marginBottom: '0px',
+    paddingBottom: '0px',
   },
   button: {
     fontSize: '30px',
