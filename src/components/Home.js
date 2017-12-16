@@ -1,5 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import cookies from 'js-cookie'
 import {
    Grid
 } from 'material-ui'
@@ -8,22 +9,31 @@ import {Skills} from './Skills'
 import {Projects} from './Projects'
 import NavTabs from './NavTabs'
 import Navbar from './Navbar'
+import Contact from './Contact'
 import {SocialIcon} from 'react-social-icons'
 import '../styles/home.css'
 
 class Home extends React.Component{
 
+  componentDidMount(){
+    const mainComponent = cookies.get('main-component')
+    if(mainComponent){
+      this.props.changeMainComponent(mainComponent)
+    }
+  }
   getMainComponent(){
     if(this.props.mainComponent === 'skills')
       return <Skills />
     if(this.props.mainComponent === 'projects')
       return <Projects />
+    if(this.props.mainComponent === 'contact')
+      return <Contact />
     return <AboutMe />
   }
   render(){
     return(
         <Grid container>
-          <Grid item lg={12} md={12} sm={12} xs={12}>
+          <Grid item xs={12} >
             <Navbar />
           </Grid>
           <Grid item lg={12} md={12} sm={12} xs={12}>
@@ -53,9 +63,11 @@ const mapStateToProps = (state) => ({
     mainComponent: state.mainReducer.mainComponent,
 })
 
-const second = ''
 const mapDispatchToProps = (dispatch) => ({
-    second: () => dispatch(second),
+  changeMainComponent: (componentName) => dispatch({
+    type: 'CHANGE_MAIN_COMPONENT',
+    value: componentName,
+  })
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home)

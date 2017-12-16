@@ -9,7 +9,9 @@ import '../styles/navbar.css'
 
 const styles = {
   root: {
-    marginTop: '10px'
+    marginTop: '10px',
+    paddingLeft: '50px',
+
   },
   button: {
     fontSize: '30px',
@@ -30,7 +32,7 @@ class Navbar extends React.Component{
         </Grid>
         <Grid item lg={6} md={4} sm={2} xs={0}> </Grid>
         <Grid item lg={3} md={4} sm={5} xs={6}>
-          <Button style={styles.button}>
+          <Button style={styles.button} onClick={this.props.changeMainComponent}>
             Contact Me
           </Button>
         </Grid>
@@ -46,6 +48,10 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
+    changeMainComponent: () => dispatch({
+      type: 'CHANGE_MAIN_COMPONENT',
+      value: 'contact'
+    })
   }
 }
 
